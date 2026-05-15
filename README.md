@@ -99,6 +99,8 @@ pip install -r requirements.txt
 
 For GPU training, install a PyTorch build compatible with your CUDA version before installing the rest of the dependencies if needed.
 
+For a step-by-step operational guide, see [`docs/RUNNING.md`](docs/RUNNING.md).
+
 ## Train
 
 Prepare a YOLO-format dataset and update `configs/data.yaml` so `path`, `train`, `val`, and `test` point to your local data.
@@ -128,6 +130,18 @@ python src/infer_riders.py \
 ```
 
 Use `--device cpu` on machines without CUDA.
+
+For video inference:
+
+```bash
+python src/infer_video.py \
+  --weights path/to/best.pt \
+  --source path/to/video.mp4 \
+  --out outputs/video/video_rider_helmet.mp4 \
+  --device 0
+```
+
+Model checkpoints are intentionally excluded from Git. See [`docs/CHECKPOINTS.md`](docs/CHECKPOINTS.md) for how to distribute or restore `.pt` files.
 
 ## Important Limitations
 
