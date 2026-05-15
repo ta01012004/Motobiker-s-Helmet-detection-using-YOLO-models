@@ -1,0 +1,12 @@
+# Portable YOLO dataset config for the main three-class experiment.
+# After preparing the dataset, replace <DATASET_ROOT> with the local dataset root
+# or pass an absolute path to Ultralytics with `data=/path/to/this/file`.
+path: <DATASET_ROOT>
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: person
+  1: motorcycle
+  2: helmet

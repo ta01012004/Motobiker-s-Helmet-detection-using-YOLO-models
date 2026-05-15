@@ -1,0 +1,11 @@
+# Optional combined dataset config. This includes additional auto-labeled frames
+# and was not used for the main reported results because the corresponding runs
+# failed early in local experiments.
+path: <COMBINED_DATASET_ROOT>
+train: images/train
+val: images/val
+
+names:
+  0: person
+  1: motorcycle
+  2: helmet

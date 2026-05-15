@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# Local notebooks and editor state
+.ipynb_checkpoints/
+.vscode/
+*.code-workspace
+
+# Large datasets and raw media
+Data image/
+Data video/
+dataloc/
+helmetdata/
+data_autolabel/
+dataset_combined/
+_derived/
+out_path/
+*.zip
+*.MOV
+*.mp4
+*.avi
+
+# Training outputs and model weights
+runs/
+runs_combo/
+runs_helmet/
+runs_pb/
+runs_test/
+models/
+models_trained/
+*.pt
+*.onnx
+*.engine
+
+# Generated split files with machine-specific absolute paths
+/data.yaml
+/dataset_combined.yaml
+train.txt
+val.txt
+test.txt
+train_helmet_pre.txt
+*.cache
+
+# Temporary Office files
+~$*
+*.docx

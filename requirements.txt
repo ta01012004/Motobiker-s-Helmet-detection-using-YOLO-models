@@ -1,0 +1,32 @@
+# ==== Python basic ====
+numpy
+pandas
+opencv-python
+matplotlib
+tqdm
+pyyaml
+lxml
+Pillow
+pillow-heif
+seaborn
+scikit-learn
+
+# ==== Deep learning ====
+torch>=2.1.0
+torchvision>=0.16.0
+torchaudio>=2.1.0
+
+# ==== Ultralytics YOLO (YOLOv8 / YOLOv10) ====
+ultralytics==8.3.15
+
+# ==== Utility ====
+gdown
+moviepy
+tensorboard==2.17.0
+protobuf==3.20.3
+onnx
+onnxruntime-gpu
+
+# ==== Optional (visualization, debugging) ====
+psutil
+rich
