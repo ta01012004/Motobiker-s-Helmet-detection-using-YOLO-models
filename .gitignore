@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 .venv/
+.venv_yolo/
 venv/
 env/
 
@@ -30,10 +31,13 @@ out_path/
 
 # Training outputs and model weights
 runs/
+runs_compare/
+runs_compare_test/
 runs_combo/
 runs_helmet/
 runs_pb/
 runs_test/
+slurm_logs/
 models/
 models_trained/
 *.pt
