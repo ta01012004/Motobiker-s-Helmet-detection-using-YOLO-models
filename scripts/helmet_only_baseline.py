@@ -18,6 +18,12 @@ from ultralytics import YOLO
 
 def iter_images(source: str):
     src = Path(source)
+    if src.is_file() and src.suffix.lower() == ".txt":
+        return [
+            line.strip()
+            for line in src.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        ]
     if src.is_dir():
         patterns = ["*.jpg", "*.jpeg", "*.png", "*.bmp", "*.JPG", "*.JPEG", "*.PNG", "*.BMP"]
         paths = []
