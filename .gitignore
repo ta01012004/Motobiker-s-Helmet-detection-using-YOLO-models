@@ -38,6 +38,7 @@ runs_helmet/
 runs_pb/
 runs_test/
 slurm_logs/
+outputs/
 models/
 models_trained/
 *.pt
