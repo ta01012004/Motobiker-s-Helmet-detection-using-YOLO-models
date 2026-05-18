@@ -58,3 +58,17 @@ python scripts/helmet_only_baseline.py \
 ```
 
 This baseline only checks whether the detector finds any `helmet` boxes in an image. It does not match helmets to persons or motorcycles, so it should be treated as a weak baseline rather than a replacement for the rule-based rider-level pipeline.
+
+Test-split outputs from the local 116-image `test.txt` split:
+
+| Model checkpoint | Helmet detected images | No-helmet-detected images | Total helmet boxes |
+| --- | ---: | ---: | ---: |
+| YOLOv8m best.pt | 93 | 23 | 230 |
+| YOLOv8n best.pt | 92 | 24 | 223 |
+| YOLOv8s best.pt | 93 | 23 | 223 |
+
+The corresponding CSV files are generated locally under:
+
+```text
+outputs/helmet_only_baseline/
+```

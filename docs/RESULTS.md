@@ -31,3 +31,30 @@ precision=0.87399, recall=0.87193, mAP50=0.91895, mAP50-95=0.69046
 | `assets/results/rider_level_demo.jpg` | Qualitative rider-level post-processing output |
 
 Use `assets/results/selected_run_curves.png` as the most appropriate single figure for Fig. 4 in the paper.
+
+## Helmet-Only Heuristic Baseline
+
+The helmet-only heuristic is a deliberately simple image-level baseline:
+
+```text
+if at least one helmet box is detected: helmet_detected
+otherwise: no_helmet_detected
+```
+
+It only uses helmet detections. It does not associate `person`, `motorcycle`, and `helmet` boxes, so it is not a rider-level metric and should not be compared directly with the full spatial-reasoning pipeline.
+
+The baseline was run on the reserved 116-image test split (`test.txt`) using the best checkpoint for each YOLOv8 variant:
+
+| Model checkpoint | Test images | Images with helmet detected | Images without helmet detected | Total helmet boxes |
+| --- | ---: | ---: | ---: | ---: |
+| YOLOv8m best.pt | 116 | 93 | 23 | 230 |
+| YOLOv8n best.pt | 116 | 92 | 24 | 223 |
+| YOLOv8s best.pt | 116 | 93 | 23 | 223 |
+
+Local CSV outputs:
+
+```text
+outputs/helmet_only_baseline/yolov8m_test/helmet_only_baseline.csv
+outputs/helmet_only_baseline/yolov8n_test/helmet_only_baseline.csv
+outputs/helmet_only_baseline/yolov8s_test/helmet_only_baseline.csv
+```

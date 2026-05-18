@@ -74,6 +74,8 @@ The helmet affinity score combines position, overlap, distance to the estimated 
 
 The repository also includes a helmet-only heuristic baseline. This baseline only checks whether a helmet is detected in the image and does not perform person-motorcycle-helmet association, so it is useful mainly as a simple reference point.
 
+On the 116-image test split, this baseline marked 93 images as `helmet_detected` with YOLOv8m, 92 with YOLOv8n, and 93 with YOLOv8s. See [`docs/RESULTS.md`](docs/RESULTS.md) for the full table.
+
 See [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for the detailed rule summary.
 
 ## Repository Layout
