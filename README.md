@@ -72,6 +72,8 @@ The pipeline has two stages:
 
 The helmet affinity score combines position, overlap, distance to the estimated head region, vertical alignment, and detector confidence. A rider is labeled as `rider_helmet` when a compatible helmet is assigned; otherwise the rider is labeled `rider_nohelmet`.
 
+The repository also includes a helmet-only heuristic baseline. This baseline only checks whether a helmet is detected in the image and does not perform person-motorcycle-helmet association, so it is useful mainly as a simple reference point.
+
 See [`docs/ALGORITHM.md`](docs/ALGORITHM.md) for the detailed rule summary.
 
 ## Repository Layout
@@ -142,6 +144,16 @@ python src/infer_video.py \
 ```
 
 Model checkpoints are intentionally excluded from Git. See [`docs/CHECKPOINTS.md`](docs/CHECKPOINTS.md) for how to distribute or restore `.pt` files.
+
+Run the helmet-only baseline:
+
+```bash
+python scripts/helmet_only_baseline.py \
+  --weights path/to/best.pt \
+  --source path/to/images_or_image.jpg \
+  --out-dir outputs/helmet_only_baseline \
+  --device 0
+```
 
 ## Important Limitations
 

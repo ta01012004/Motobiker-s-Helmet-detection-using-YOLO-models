@@ -44,3 +44,16 @@ The reasoning module:
 5. Labels a rider as `rider_helmet` when the affinity score is at least 0.5; otherwise it is labeled `rider_nohelmet`.
 
 The paper reports validated metrics only for the three-class detector. The final rider-level labels are qualitative outputs because rider-level ground truth has not yet been annotated.
+
+## Baseline: Helmet-Only Heuristic
+
+The helmet-only heuristic is a deliberately simple baseline. It uses only `helmet` detections from the trained detector and does not associate `person`, `motorcycle`, and `helmet` boxes.
+
+For each image or frame:
+
+1. Run the three-class detector.
+2. Keep only detections whose class is `helmet`.
+3. If at least one helmet is detected above the confidence threshold, label the scene as `helmet_detected`.
+4. Otherwise, label the scene as `no_helmet_detected`.
+
+This baseline is useful as a sanity check because it shows what can be achieved without spatial reasoning. It is not a true rider-level method: it cannot determine whether a detected helmet belongs to the correct motorcycle rider, and it can fail when a helmet belongs to a pedestrian, a passenger, a parked motorcycle, or a background object.

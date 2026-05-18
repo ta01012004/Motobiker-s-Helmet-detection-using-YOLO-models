@@ -44,3 +44,17 @@ Submitted local job ids on this workspace:
 73325 YOLOv8n
 73326 YOLOv8s
 ```
+
+## Helmet-Only Heuristic Baseline
+
+A simple non-spatial baseline is also provided:
+
+```bash
+python scripts/helmet_only_baseline.py \
+  --weights runs_compare/yolov8s_120ep/weights/best.pt \
+  --source path/to/images \
+  --out-dir outputs/helmet_only_baseline \
+  --device 0
+```
+
+This baseline only checks whether the detector finds any `helmet` boxes in an image. It does not match helmets to persons or motorcycles, so it should be treated as a weak baseline rather than a replacement for the rule-based rider-level pipeline.
